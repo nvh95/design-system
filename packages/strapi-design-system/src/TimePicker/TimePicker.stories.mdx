@@ -37,17 +37,20 @@ Use the Time picker component whenever a specific time needs to be scheduled or 
   <Story name="base">
     {() => {
       const [value, setValue] = useState();
+      const [error, setError] = useState();
       return (
         <TimePicker
           label={'Choose a time'}
           disabled={false}
-          error={undefined}
+          error={error?.message}
           hint={'Description line'}
           id={'tp-1'}
-          onClear={() => setValue(undefined)}
+          onClear={() => setValue(null)}
           onChange={setValue}
+          onError={(err) => setError(err)}
           value={value}
           clearLabel={'Clear the selected time picker value'}
+          step={15}
         />
       );
     }}

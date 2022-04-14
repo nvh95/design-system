@@ -66,7 +66,7 @@ Depending on the status of an action or the permissions, an IconButton can be un
   </Story>
 </Canvas>
 
-### IconButton Disabled
+### IconButton without tooltip
 
 An Icon button without the tooltip. It can be interesting to rely on this component to avoid showing a tooltip when focusing the modals close button. **However, when not using a label, the developer should add an explicit aria-label to the button.**
 
@@ -74,6 +74,27 @@ An Icon button without the tooltip. It can be interesting to rely on this compon
   <Story name="without tooltip">
     <Box padding={7}>
       <IconButton onClick={() => console.log('edit')} aria-label="Edit" icon={<Pencil />} />
+    </Box>
+  </Story>
+</Canvas>
+
+### IconButton customization
+
+Icon button's background and svg can be customized.
+
+<Canvas>
+  <Story name="customized">
+    <Box padding={7}>
+      <IconButton
+        background="neutral800"
+        borderColor="neutral900"
+        iconColor="neutral0"
+        iconHover="neutral200"
+        iconActive="neutral0"
+        onClick={() => console.log('edit')}
+        aria-label="Edit"
+        icon={<Pencil />}
+      />
     </Box>
   </Story>
 </Canvas>

@@ -8,8 +8,8 @@ export const BaseButtonWrapper = styled.button`
   cursor: pointer;
   padding: ${({ theme }) => theme.spaces[2]};
   border-radius: ${({ theme }) => theme.borderRadius};
-  background: ${({ theme }) => theme.colors.neutral0};
-  border: 1px solid ${({ theme }) => theme.colors.neutral200};
+  background: ${({ theme, background }) => (background ? theme.colors[background] : theme.colors.neutral0)};
+  border: 1px solid ${({ theme, borderColor }) => (borderColor ? theme.colors[borderColor] : theme.colors.neutral200)};
   svg {
     height: ${({ theme }) => theme.spaces[3]};
     width: ${({ theme }) => theme.spaces[3]};

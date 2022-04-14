@@ -15,14 +15,14 @@ const IconButtonWrapper = styled(BaseButton)`
   svg {
     > g,
     path {
-      fill: ${({ theme }) => theme.colors.neutral500};
+      fill: ${({ theme, iconColor }) => (iconColor ? theme.colors[iconColor] : theme.colors.neutral500)};
     }
   }
   &:hover {
     svg {
       > g,
       path {
-        fill: ${({ theme }) => theme.colors.neutral600};
+        fill: ${({ theme, iconHover }) => (iconHover ? theme.colors[iconHover] : theme.colors.neutral600)};
       }
     }
   }
@@ -30,7 +30,7 @@ const IconButtonWrapper = styled(BaseButton)`
     svg {
       > g,
       path {
-        fill: ${({ theme }) => theme.colors.neutral400};
+        fill: ${({ theme, iconActive }) => (iconActive ? theme.colors[iconActive] : theme.colors.neutral400)};
       }
     }
   }
